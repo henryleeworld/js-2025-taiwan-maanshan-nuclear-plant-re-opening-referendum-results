@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta property="og:title" content="台灣 2025 年台灣重啟屏東馬鞍山核能發電廠公投結果" />
+        <meta property="og:description" content="自 2011 年東日本大地震造成的福島核災後，台灣以非核家園政策為目標，最後一座核電廠至 2025 年 5 月中停機。但因 AI 興起帶動電力需求，以及因應台海戰爭風險所需的能源儲備方針，使得台灣是否需要核電這個議題再度成為公眾需要討論的焦點。這場公投不僅決定核三廠是否再度啟用，也將影響台灣未來的能源發展方針。" />
+        <meta property="og:locale" content="zh_TW" />
+        <meta property="og:type" content="website" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/results.css" />
+        <title>台灣 2025 年台灣重啟屏東馬鞍山核能發電廠公投結果</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>全國性公民投票案第 21 案</h1>
+            <p>您是否同意第三核能發電廠經主管機關同意確認無安全疑慮後，繼續運轉？</p>
+        </div>
+        <div class="container">
+            <div class="sidebar">
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="visualMode">視覺化模式</label>
+                        <select id="visualMode">
+                            <option value="agree_rate">同意票比例</option>
+                            <option value="disagree_rate">不同意票比例</option>
+                            <option value="turnout_rate">投票率</option>
+                            <option value="total_votes">總投票數</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="countyFilter">縣市篩選</label>
+                        <select id="countyFilter">
+                            <option value="">全部縣市</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <button id="locationBtn" style="width: 100%; padding: 8px; background-color: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                            📍 定位到我的村里
+                        </button>
+                    </div>
+                </div>
+                <div class="legend">
+                    <h3>圖例</h3>
+                    <div id="legendContent"></div>
+                </div>
+                <div class="stats">
+                    <h3>統計資訊</h3>
+                    <div id="statsContent">
+                        <div class="stat-item">
+                            <span>載入中...</span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container">
+                <button class="sidebar-toggle" id="sidebarToggle">☰ 選單</button>
+                <div id="map"></div>
+                <div class="loading" id="loading">
+                    載入地圖資料中...
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+        <script src="js/results.js" defer></script>
+    </body>
+</html>
